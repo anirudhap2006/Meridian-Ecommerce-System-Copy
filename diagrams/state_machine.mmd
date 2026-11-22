@@ -1,0 +1,13 @@
+stateDiagram-v2
+ [*] --> Cart
+ Cart --> Checkout: Select address
+ Checkout --> PaymentPending
+ PaymentPending --> Placed: Demo success
+ PaymentPending --> Cancelled: Demo failure
+ Placed --> Confirmed
+ Confirmed --> Shipped
+ Shipped --> Delivered
+ Placed --> Cancelled: Customer cancellation
+ Confirmed --> Cancelled: Before shipment
+ Delivered --> [*]
+ Cancelled --> [*]

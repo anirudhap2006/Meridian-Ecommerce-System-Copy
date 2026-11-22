@@ -1,0 +1,11 @@
+flowchart TD
+ A([Start])-->B[Search products]
+ B-->C[Open product]
+ C-->D[Add to cart]
+ D-->E[Select address]
+ E-->F[Review order]
+ F-->G[Simulate payment]
+ G-->H{Success?}
+ H--Yes-->I[Create placed order and deduct stock]
+ H--No-->J[Cancel order; preserve stock]
+ I-->K([End]); J-->K

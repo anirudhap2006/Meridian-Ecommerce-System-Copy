@@ -1,0 +1,17 @@
+sequenceDiagram
+ actor Customer
+ participant App as Meridian
+ participant DB as Database
+ participant Mail as Email/Console
+ Customer->>App: Submit registration
+ App->>DB: Save temporary OTP
+ App->>Mail: Send verification code
+ Mail-->>Customer: OTP
+ Customer->>App: Submit OTP
+ App->>DB: Validate and create account
+ Customer->>App: Browse, cart and checkout
+ App->>DB: Validate stock and create order
+ App-->>Customer: Payment simulation
+ Customer->>App: Choose success/failure
+ App->>DB: Record payment and update order/stock
+ App-->>Customer: Order result

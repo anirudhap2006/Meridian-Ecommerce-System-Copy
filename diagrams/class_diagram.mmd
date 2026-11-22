@@ -1,0 +1,10 @@
+classDiagram
+ User "1" --> "*" Address
+ User "1" --> "*" CartItem
+ Product "1" --> "*" CartItem
+ Category "1" --> "*" Product
+ User "1" --> "*" Order
+ Address "1" --> "*" Order
+ Order "1" --> "*" OrderItem
+ Product "1" --> "*" OrderItem
+ Order "1" --> "*" Payment
