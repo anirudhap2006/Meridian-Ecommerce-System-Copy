@@ -1,33 +1,133 @@
-# Meridian — E-commerce Shopping and Order Management System
+# Meridian – E-commerce System
 
-Meridian is an academic Django prototype. Customers can register with email OTP verification, browse/search products, manage a cart and delivery addresses, simulate checkout/payment, and view/cancel orders. Administrators manage products, categories, stock and orders through Django Admin.
+## 1. Project Overview
 
-## Stack
-Python, Django 5.2, SQLite, HTML, CSS.
+Meridian is a Django-based e-commerce web application developed as an academic project. It provides a central platform where users can register, browse products, search for items, manage a shopping cart, save delivery addresses, place orders and view their order history.
 
-## Windows / VS Code setup
-1. Extract the ZIP and open `Meridian_Ecommerce_Project` in VS Code.
-2. Terminal → New Terminal.
-3. `python -m venv venv`
-4. `.env\Scripts\Activate.ps1`
-5. `python -m pip install -r requirements.txt`
-6. `python manage.py makemigrations store`
-7. `python manage.py migrate`
-8. `python manage.py createsuperuser`
-9. `python manage.py runserver`
-10. Open http://127.0.0.1:8000/
+## 2. Features
 
-## Email OTP
-In local development Django prints the OTP email to the VS Code terminal using the console email backend. For real email delivery configure `DJANGO_EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend`, `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USE_TLS`, `EMAIL_HOST_USER`, `EMAIL_HOST_PASSWORD` and `DEFAULT_FROM_EMAIL` as environment variables. Never commit email credentials.
+- User registration and login
+- Email OTP verification workflow
+- Product browsing and search
+- Product categories and sorting
+- Shopping cart management
+- Delivery address management
+- Checkout and simulated payment
+- Order confirmation and order history
+- Order cancellation
+- Django administration panel for managing products, categories, users, orders and payments
 
-## Add sample catalogue
-Visit `/admin/`, create Categories (e.g. Electronics, Books, Home), then Products with unique slug, description, price, stock and optional image URL.
+## 3. Technology Stack
 
-## Payments
-Card/UPI methods and success/failure are simulations only. No real money or payment credentials are processed.
+- **Backend:** Python, Django
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite
+- **Development environment:** Visual Studio Code
+- **Version control:** Git and GitHub
 
-## Tests
-Run `python manage.py test`. The starter suite covers product search, login protection, cart addition, successful checkout/stock deduction and failed-payment stock preservation.
+## 4. Project Structure
 
-## Limitations
-Single-store catalogue managed by administrators; seller onboarding, real payment gateway, live shipping, and production email delivery are not included by default. SQLite is for local academic demonstration.
+```text
+Meridian_Ecommerce_Project/
+├── diagrams/
+├── meridian/
+├── static/
+│   └── css/
+├── store/
+├── templates/
+├── manage.py
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+
+## 5. Installation and Setup
+
+### Prerequisites
+
+- Python 3.10 or later
+- pip
+- Git
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/anirudhap2006/Meridian-Ecommerce-System-Copy.git
+cd Meridian-Ecommerce-System-Copy
+```
+
+### Step 2: Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+### Step 3: Activate the virtual environment
+
+**Windows PowerShell:**
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### Step 4: Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Step 5: Apply database migrations
+
+```bash
+python manage.py migrate
+```
+
+### Step 6: Create an administrator account
+
+```bash
+python manage.py createsuperuser
+```
+
+Follow the prompts to create the administrator username and password.
+
+### Step 7: Run the application
+
+```bash
+python manage.py runserver
+```
+
+Open the following address in your browser:
+
+http://127.0.0.1:8000/
+
+## 6. Administration Panel
+
+The Django administration panel is available at:
+
+http://127.0.0.1:8000/admin/
+
+Log in using the administrator account created during setup. The administrator can manage products, categories, users, addresses, orders and payment records.
+
+## 7. Testing
+
+Run the automated test suite using:
+
+```bash
+python manage.py test
+```
+
+The project includes automated tests for key application functionality.
+
+## 8. Payment and Verification Notes
+
+Meridian is an academic demonstration application. Payments are simulated; no real money is charged. The verification workflow is intended for demonstration and should not be treated as a production email or OTP delivery service.
+
+## 9. Project Purpose
+
+The project demonstrates the application of software development fundamentals, database management, user authentication, web application architecture, shopping cart functionality, order processing and software testing.
+
+---
+
+**Project Name:** Meridian  
+**Project Type:** Academic E-commerce Web Application  
+**Repository:** https://github.com/anirudhap2006/Meridian-Ecommerce-System-Copy
